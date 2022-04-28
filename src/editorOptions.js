@@ -1,38 +1,38 @@
 const editorOptions = [
-  'minLines',
-  'maxLines',
-  'readOnly',
-  'highlightActiveLine',
-  'tabSize',
-  'enableBasicAutocompletion',
-  'enableLiveAutocompletion',
-  'enableSnippets',
+  "minLines",
+  "maxLines",
+  "readOnly",
+  "highlightActiveLine",
+  "tabSize",
+  "enableBasicAutocompletion",
+  "enableLiveAutocompletion",
+  "enableSnippets"
 ];
 
 const editorEvents = [
-  'onChange',
-  'onFocus',
-  'onInput',
-  'onBlur',
-  'onCopy',
-  'onPaste',
-  'onSelectionChange',
-  'onCursorChange',
-  'onScroll',
-  'handleOptions',
-  'updateRef',
-]
-const getAceInstance = ()=>{
+  "onChange",
+  "onFocus",
+  "onInput",
+  "onBlur",
+  "onCopy",
+  "onPaste",
+  "onSelectionChange",
+  "onCursorChange",
+  "onScroll",
+  "handleOptions",
+  "updateRef"
+];
+const getAceInstance = () => {
   let ace;
   // Fallback for ace.require when vanilla ACE is hosted over a CDN
-  if(window.ace) {
+  if (window.ace) {
     ace = window.ace;
     ace.acequire = window.ace.require || window.ace.acequire;
   } else {
-    ace = require('brace');
+    ace = require("@datlas/brace");
   }
   return ace;
-}
+};
 
 const debounce = (fn, delay) => {
   var timer = null;
@@ -45,4 +45,4 @@ const debounce = (fn, delay) => {
     }, delay);
   };
 };
-export { editorOptions, editorEvents, debounce,getAceInstance };
+export { editorOptions, editorEvents, debounce, getAceInstance };
